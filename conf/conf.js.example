@@ -1,0 +1,11 @@
+var config = { 
+  mail: {
+    service: "Gmail",
+    auth: {
+      user: "user@example.com",
+      pass: "awesomepassword"
+    }   
+  }
+};
+
+module.exports = config;
