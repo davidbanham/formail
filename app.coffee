@@ -31,6 +31,7 @@ app.configure "production", ->
 # Routes
 app.post "/", (req, res) ->
   bod = req.body
+  return res.send 500 if conf.whitelist.indexOf(bod.to) < 0
   mail =
     from: bod.from.replace '@', '\\@'
     replyTo: bod.from

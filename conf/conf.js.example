@@ -6,6 +6,8 @@ var config = {
       pass: "awesomepassword"
     }   
   }
+	, whitelist: [
+	]
 };
 
 module.exports = config;
