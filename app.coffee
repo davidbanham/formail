@@ -33,6 +33,7 @@ app.post "/", (req, res) ->
   bod = req.body
   mail =
     from: bod.from.replace '@', '\\@'
+    replyTo: bod.from
     to: bod.to
     subject: bod.subject
     text: bod.text
