@@ -1,22 +1,27 @@
 {
   "name": "formail",
-  "version": "0.0.0",
+  "version": "0.0.0-3",
   "private": true,
   "dependencies": {
-    "express": "2.3.11"
-		, "coffee-script": "*"
+    "express": "*",
+    "coffee-script": "*",
+    "nodemailer": "*"
   },
   "description": "A utility for taking form submissions and turning them into email.",
   "main": "app.coffee",
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-		, "start": "./node_modules/coffee-script/bin/coffee app.coffee"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "coffee app.coffee"
   },
   "repository": {
     "type": "git",
     "url": "git@gitg.it:formail"
   },
   "author": "David Banham",
-  "license": "BSD"
+  "license": "BSD",
+  "subdomain": "formail",
+  "engines": {
+    "node": "0.8.x"
+  }
 }
