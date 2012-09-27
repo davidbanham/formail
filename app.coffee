@@ -44,7 +44,8 @@ app.post "/", (req, res) ->
       res.send 500
       logger.error error
       return
-    res.send 200
+    res.send 200 if !bod.redir
+    res.redirect bod.redir if bod.redir
 
 app.get "/test", (req, res) ->
   resp = "<html><body><form action='/' method='post'><input type='text' name='from'><input type='text' name='to'><input type='text' name='subject'><input type='text' name='text'><input type='submit'></form></body></html>"
