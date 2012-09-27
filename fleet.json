@@ -1,0 +1,8 @@
+{
+  "remote": {
+    "default": {
+      "hub": "ec2-23-22-119-131.compute-1.amazonaws.com:7000",
+      "secret": ""
+    }
+  }
+}
