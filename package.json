@@ -8,7 +8,7 @@
     "nodemailer": "*"
   },
   "description": "A utility for taking form submissions and turning them into email.",
-  "main": "app.js",
+  "main": "server.js",
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

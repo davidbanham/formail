@@ -6,7 +6,7 @@ express = require("express")
 nodemailer = require("nodemailer")
 http = require("http")
 conf = require("./conf/conf.js")
-app = express()
+app = module.exports = express()
 transport = nodemailer.createTransport("SMTP", conf.mail)
 logger = console
 
@@ -51,5 +51,5 @@ app.get "/test", (req, res) ->
   resp = "<html><body><form action='/' method='post'><input type='text' name='from'><input type='text' name='to'><input type='text' name='subject'><input type='text' name='text'><input type='submit'></form></body></html>"
   res.send resp
 
-http.createServer(app).listen app.get("port"), ->
-    console.log "Express server listening on port " + app.get("port")
+app.listen app.get("port"), ->
+  console.log "Express server listening on port " + app.get("port")
