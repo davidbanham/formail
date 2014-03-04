@@ -1,7 +1,4 @@
 
-###
-Module dependencies.
-###
 express = require("express")
 nodemailer = require("nodemailer")
 http = require("http")
