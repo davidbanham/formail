@@ -3,9 +3,9 @@
   "version": "0.0.0-3",
   "private": true,
   "dependencies": {
-    "express": "*",
-    "coffee-script": "*",
-    "nodemailer": "*"
+    "express": "~3.3.5",
+    "coffee-script": "~1.6.3",
+    "nodemailer": "~0.5.2"
   },
   "description": "A utility for taking form submissions and turning them into email.",
   "main": "server.js",
