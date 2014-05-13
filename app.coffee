@@ -30,6 +30,14 @@ app.configure "production", ->
 app.post "/", (req, res) ->
   bod = req.body
   return res.send 500 if conf.whitelist.indexOf(bod.to) < 0
+  send_email req, res
+
+app.post "/authed", (req, res) ->
+  return res.send 401 if req.body.auth isnt conf.auth
+  send_email req, res
+
+send_email = (req, res) ->
+  bod = req.body
   bod.prepend = '' if !bod.prepend?
   mail =
     from: bod.from.replace '@', '\\@'
@@ -48,6 +56,11 @@ app.post "/", (req, res) ->
 
 app.get "/test", (req, res) ->
   fs.readFile './testpage.html', (err, data) ->
+    resp = data.toString()
+    res.send resp
+
+app.get "/authed_test", (req, res) ->
+  fs.readFile './authed_test.html', (err, data) ->
     resp = data.toString()
     res.send resp
 
