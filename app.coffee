@@ -30,7 +30,7 @@ app.configure "production", ->
 app.post "/", (req, res) ->
   bod = req.body
   return res.send 500 if conf.whitelist.indexOf(bod.to) < 0
-  bod.prepend == '' if bod.prepend?
+  bod.prepend = '' if !bod.prepend?
   mail =
     from: bod.from.replace '@', '\\@'
     replyTo: bod.from
